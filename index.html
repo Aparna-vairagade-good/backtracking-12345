@@ -154,8 +154,9 @@ Eventually the recursion will "bottom" out at a leaf node. If the leaf node is a
 <p>For starters, let's do the simplest possible example of backtracking, which is searching an actual tree. We will also use the simplest kind of tree, a binary tree.</p>
 <p>A binary tree is a data structure composed of node. One node is designed as the root node. Each node can reference (point to) zero, one,or, teo other nides, which are called its children. the children are refered to as the letf child and/or rihgt child. All nodes are reachable (by one or more steps) from the root node, and there are no cycles. For our purposes, although this is not part of the definition of a binary tree, we will say that a node might or might not be a goal node, and will contain its name. The first example in this paper (which we repeat here) shows a binary tree.</p>
 <center>
-    <img src="https://akarsh-gupta007.github.io/backtracking/treesearch.gif" alt="404 error"
-</center>
+    <img src="https://akarsh-gupta007.github.io/backtracking/treesearch.gif" alt="404 error"</center>
+
+
 
 <p>Here's a definition of the BinaryTree class:</p>
 <pre>    public class BinaryTree {
@@ -207,15 +208,14 @@ Eventually the recursion will "bottom" out at a leaf node. If the leaf node is a
 
 </pre>
 <p>Here's what the numbered lines are doing:</p>
-<ol type="1">
-    <li>If we are given a null node, it's not solvable. This statement is so that we can call this method with the children of a node, without first checking whether those children actually exist.    </li>
+<ul type="1">
+ <li>If we are given a null node, it's not solvable. This statement is so that we can call this method with the children of a node, without first checking whether those children actually exist.    </li>
 <li>If the node we are given is a goal node, return success.</li>
 <li>See if the left child of node is solvable, and if so, conclude that node is solvable. We will only get to this line if node is non-null and is not a goal node, says to</li>
 <li>Do the same thing for the right child.</li>
 <li>Since neither child of node is solvable, node itself is not solvable.</li>
 
-
-</ol>
+</ul>
 <p>This program runs correctly and produces the unenlightening result true</p>
 <p>Each time we ask for another node, we have to check if it is null. In the above we put that check as the first thing insolvable. An alternative would be to check first whether each child exists, and recur only if they do. Here's that alternative version:</p>
 <pre>    static boolean solvable(BinaryTree node) {
@@ -249,7 +249,7 @@ Eventually the recursion will "bottom" out at a leaf node. If the leaf node is a
  </dl>
  <dl>
     <dt>int[] nextRowAndColumn(int row, int column)    </dt>
-    <dd>Used by both methods to find the next "country" (actually, the row and column of the next square on the checkerboard).    </dd>
+    < dd>Used by both methods to find the next "country" (actually, the row and column of the next square on the checkerboard).    </>
 
  </dl>
 <p>Here's the code for method 1:</p>
@@ -416,11 +416,11 @@ static boolean solvable(BinaryTree node) {
 <center>
     <table border="1px">
         <tr>
-        <td><img src="https://akarsh-gupta007.github.io/backtracking/" alt=""></td>
-         <td><img src="https://akarsh-gupta007.github.io/backtracking/" alt=""></td>
+        <td><img src="https://akarsh-gupta007.github.io/backtracking/black-ball.gif" alt=""></td>
+         <td><img src="https://akarsh-gupta007.github.io/backtracking/black-ball.gif" alt=""></td>
          <td><img src="" alt=""></td>
-         <td><img src="https://akarsh-gupta007.github.io/backtracking/" alt=""></td>
-         <td><img src="https://akarsh-gupta007.github.io/backtracking/" alt=""></td>
+         <td><img src="https://akarsh-gupta007.github.io/backtracking/white-ball.gif" alt=""></td>
+         <td><img src="https://akarsh-gupta007.github.io/backtracking/white-ball.gif" alt=""></td>
 
 
 
@@ -431,6 +431,20 @@ static boolean solvable(BinaryTree node) {
 
     </table>
 
+</center>
+<p>The goal is reversed positions of the marbels:</p>
+<center>
+    <table border="1px">
+        <tr>
+            <td><img src="https://akarsh-gupta007.github.io/backtracking/white-ball.gif" alt=""></td>
+            <td><img src="https://akarsh-gupta007.github.io/backtracking/white-ball.gif" alt=""></td>
+            <td><img src="" alt=""></td>
+            <td><img src="https://akarsh-gupta007.github.io/backtracking/black-ball.gif" alt=""></td>
+            <td><img src="https://akarsh-gupta007.github.io/backtracking/black-ball.gif" alt=""></td>
+
+        </tr>
+
+    </table>
 </center>
 <p>The black marbles can only move to the right, and the white marbles can only move to the left (no backing up). At each move, a marble can either:</p>
 <ul>
@@ -446,11 +460,11 @@ static boolean solvable(BinaryTree node) {
             <td>
                 <table border="1px">
                     <tr>
-                        <td><img src="https://akarsh-gupta007.github.io/backtracking/" alt=""></td>
-                        <td><img src="https://akarsh-gupta007.github.io/backtracking/" alt=""></td>
-                        <td></td>
-                        <td><img src="https://akarsh-gupta007.github.io/backtracking/" alt=""></td>
-                        <td><img src="https://akarsh-gupta007.github.io/backtracking/" alt=""></td>
+                        <td><img src="https://akarsh-gupta007.github.io/backtracking/black-ball.gif" alt=""></td>
+                        <td><img src="https://akarsh-gupta007.github.io/backtracking/black-ball.gif" alt=""></td>
+                        <td><img src="" alt=""></td>
+                        <td><img src="https://akarsh-gupta007.github.io/backtracking/white-ball.gif" alt=""></td>
+                        <td><img src="https://akarsh-gupta007.github.io/backtracking/white-ball.gif" alt=""></td>
                     </tr>
                     
                 </table>
@@ -461,11 +475,11 @@ static boolean solvable(BinaryTree node) {
             <td>
                 <table border="1px">
                     <tr>
-                        <td><img src="https://akarsh-gupta007.github.io/backtracking/" alt=""></td>
+                        <td><img src="https://akarsh-gupta007.github.io/backtracking/black-ball.gif" alt=""></td>
                         <td><img src="" alt=""></td>
-                        <td><img src="https://akarsh-gupta007.github.io/backtracking/" alt=""></td>
-                        <td><img src="https://akarsh-gupta007.github.io/backtracking/" alt=""></td>
-                        <td><img src="https://akarsh-gupta007.github.io/backtracking/" alt=""></td>
+                        <td><img src="https://akarsh-gupta007.github.io/backtracking/black-ball.gif" alt=""></td>
+                        <td><img src="https://akarsh-gupta007.github.io/backtracking/white-ball.gif" alt=""></td>
+                        <td><img src="https://akarsh-gupta007.github.io/backtracking/white-ball.gif" alt=""></td>
                     </tr>
 
                 </table>
@@ -476,11 +490,11 @@ static boolean solvable(BinaryTree node) {
             <td>
                 <table border="1px">
                     <tr>
-                        <td><img src="https://akarsh-gupta007.github.io/backtracking/" alt=""></td>
-                        <td><img src=""https://akarsh-gupta007.github.io/backtracking/"" alt=""></td>
-                        <td><img src="https://akarsh-gupta007.github.io/backtracking/" alt=""></td>
+                        <td><img src="https://akarsh-gupta007.github.io/backtracking/black-ball.gif" alt=""></td>
+                        <td><img src=""https://akarsh-gupta007.github.io/backtracking/white-ball.gif"" alt=""></td>
+                        <td><img src="https://akarsh-gupta007.github.io/backtracking/black-ball.gif" alt=""></td>
                         <td><img src="" alt=""></td>
-                        <td><img src="https://akarsh-gupta007.github.io/backtracking/" alt=""></td>
+                        <td><img src="https://akarsh-gupta007.github.io/backtracking/white-ball.gif" alt=""></td>
                     </tr>
 
                 </table>
@@ -492,11 +506,11 @@ static boolean solvable(BinaryTree node) {
             <td>
                 <table border="1px">
                     <tr>
-                        <td><img src="https://akarsh-gupta007.github.io/backtracking/" alt=""></td>
-                        <td><img src="https://akarsh-gupta007.github.io/backtracking/" alt=""></td>
+                        <td><img src="https://akarsh-gupta007.github.io/backtracking/black-ball.gif" alt=""></td>
+                        <td><img src="https://akarsh-gupta007.github.io/backtracking/white-ball.gif" alt=""></td>
                         <td><img src="" alt=""></td>
-                        <td><img src="https://akarsh-gupta007.github.io/backtracking/" alt=""></td>
-                        <td><img src="https://akarsh-gupta007.github.io/backtracking/" alt=""></td>
+                        <td><img src="https://akarsh-gupta007.github.io/backtracking/black-ball.gif" alt=""></td>
+                        <td><img src="https://akarsh-gupta007.github.io/backtracking/white-ball.gif" alt=""></td>
                     </tr>
 
                 </table>
@@ -508,10 +522,10 @@ static boolean solvable(BinaryTree node) {
                 <table border="1px">                                        
                     <tr>
                         <td><img src="" alt=""></td>
-                        <td><img src="https://akarsh-gupta007.github.io/backtracking/" alt=""></td>
-                        <td><img src="https://akarsh-gupta007.github.io/backtracking/" alt=""></td>
-                        <td><img src="https://akarsh-gupta007.github.io/backtracking/" alt=""></td>
-                        <td><img src="https://akarsh-gupta007.github.io/backtracking/" alt=""></td>
+                        <td><img src="https://akarsh-gupta007.github.io/backtracking/white-ball.gif" alt=""></td>
+                        <td><img src="https://akarsh-gupta007.github.io/backtracking/black-ball.gif" alt=""></td>
+                        <td><img src="https://akarsh-gupta007.github.io/backtracking/black-ball.gif" alt=""></td>
+                        <td><img src="https://akarsh-gupta007.github.io/backtracking/white-ball.gif" alt=""></td>
                     </tr>
 
                 </table>
@@ -523,10 +537,10 @@ static boolean solvable(BinaryTree node) {
                 <table border="1px">
                     <tr>
                         <td><img src="" alt=""></td>
-                        <td><img src="https://akarsh-gupta007.github.io/backtracking/" alt=""></td>
-                        <td><img src="https://akarsh-gupta007.github.io/backtracking/" alt=""></td>
-                        <td><img src="https://akarsh-gupta007.github.io/backtracking/" alt=""></td>
-                        <td><img src="https://akarsh-gupta007.github.io/backtracking/" alt=""></td>
+                        <td><img src="https://akarsh-gupta007.github.io/backtracking/white-ball.gif" alt=""></td>
+                        <td><img src="https://akarsh-gupta007.github.io/backtracking/black-ball.gif" alt=""></td>
+                        <td><img src="https://akarsh-gupta007.github.io/backtracking/black-ball.gif" alt=""></td>
+                        <td><img src="https://akarsh-gupta007.github.io/backtracking/black-ball.gif" alt=""></td>
                     </tr>
 
                 </table>
